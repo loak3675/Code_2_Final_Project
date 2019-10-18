@@ -14,8 +14,16 @@ morse_code_dictinoary = { 'A':'.-', 'B':'-...',
                     '?':'..--..', '/':'-..-.', '-':'-....-', 
                     '(':'-.--.', ')':'-.--.-'} 
                     
-// def encrypt();
-// still trying to figure out the for loop I'm going to need in this one as well as whether or not I need an else function in this portion.
+def encrypt(message): 
+	cipher = '' 
+	for letter in message: 
+		if letter != ' ': 
+    
+			cipher += MORSE_CODE_DICT[letter] + ' '
+		else: 
+			cipher += ' '
+
+	return cipher 
 
 // def decrypt();
 // this is going to be the hardest part of my code so this portion will be saved for a later date.
