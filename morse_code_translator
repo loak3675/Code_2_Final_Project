@@ -25,8 +25,15 @@ def encrypt(message):
 
 	return cipher 
 
-// def decrypt();
-// this is going to be the hardest part of my code so this portion will be saved for a later date.
+def decrypt();
+def main(): 
+	message = "Morse Code Translator"
+	result = encrypt(message.upper()) 
+	print (result) 
 
-// def main();
-// I will basically jsut need to add a print function within this portion, I think...
+	message = " this is where I would type my message in morse code to be translated into English"
+	result = decrypt(message) 
+	print (result) 
+
+if __name__ == '__main__': 
+	main() 
