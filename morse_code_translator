@@ -1,4 +1,4 @@
-morse_code_dictinoary = { 'A':'.-', 'B':'-...', 
+MORSE_CODE_DICT = { 'A':'.-', 'B':'-...', 
                     'C':'-.-.', 'D':'-..', 'E':'.', 
                     'F':'..-.', 'G':'--.', 'H':'....', 
                     'I':'..', 'J':'.---', 'K':'-.-', 
@@ -13,27 +13,51 @@ morse_code_dictinoary = { 'A':'.-', 'B':'-...',
                     '0':'-----', ', ':'--..--', '.':'.-.-.-', 
                     '?':'..--..', '/':'-..-.', '-':'-....-', 
                     '(':'-.--.', ')':'-.--.-'} 
-                    
+   
 def encrypt(message): 
-	cipher = '' 
-	for letter in message: 
-		if letter != ' ': 
+    cipher = '' 
+    for letter in message: 
+        if letter != ' ': 
+	
+        else: 
+            cipher += ' '
+    return cipher 
+
+def decrypt(message): 
+
+    message += ' '
+  
+    decipher = '' 
+    citext = '' 
+    for letter in message: 
     
-			cipher += MORSE_CODE_DICT[letter] + ' '
-		else: 
-			cipher += ' '
+        if (letter != ' '): 
+  
+            i = 0
 
-	return cipher 
-
-def decrypt();
+            citext += letter 
+   
+        else: 
+            i += 1
+   
+            if i == 2 : 
+  
+                decipher += ' '
+            else: 
+                decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT 
+                .values()).index(citext)] 
+                citext = '' 
+  
+    return decipher 
+    
 def main(): 
-	message = "Morse Code Translator"
-	result = encrypt(message.upper()) 
-	print (result) 
-
-	message = " this is where I would type my message in morse code to be translated into English"
-	result = decrypt(message) 
-	print (result) 
-
+    message = "I-LOVE-CODING"
+    result = encrypt(message.upper()) 
+    print (result) 
+  
+    message = "..  .-.. --- ...- .  -.-. --- -.. .. -. --."
+    result = decrypt(message) 
+    print (result) 
+  
 if __name__ == '__main__': 
-	main() 
+    main()
